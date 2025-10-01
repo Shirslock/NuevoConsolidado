@@ -13,12 +13,18 @@ function App() {
   const mostrarIngresos = () => setVista('ingresos');
   const mostrarEgresos = () => setVista('egresos');
   const mostrarLiquidacion = () => setVista('liquidacion');
-  const mostrarCompensaciones = () => setVista ('compensaciones');
-  const mostrarQuery = () => setVista('reporteQuery')
+  const mostrarCompensaciones = () => setVista('compensaciones');
+  const mostrarQuery = () => setVista('reporteQuery');
 
   return (
     <div>
-      <Navbar onShowButtons={mostrarMenu} onShowLiquidacion={mostrarLiquidacion} onShowCompensaciones={mostrarCompensaciones} onShowReporteQuery={mostrarQuery} />
+      <Navbar
+        onShowButtons={mostrarMenu}
+        onShowLiquidacion={mostrarLiquidacion}
+        onShowCompensaciones={mostrarCompensaciones}
+        onShowReporteQuery={mostrarQuery}
+        activeSection={vista} // ← pasamos la vista actual al Navbar
+      />
       <main className="main-content">
         {vista === 'menu' && (
           <div className="button-group">
@@ -34,7 +40,6 @@ function App() {
         {vista === 'egresos' && <ReporteEgresos />}
         {vista === 'liquidacion' && (
           <div className="button-group">
-            {/* Acá irán los botones que me vas a pasar */}
             <button>Informe De Agrupamiento De Concepto SOFSE</button>
             <button>Informe Detallado De Los Conceptos</button>
             <button>Acumulado De Conceptos</button>
@@ -48,7 +53,7 @@ function App() {
           </div>
         )}
         {vista === 'compensaciones' && (
-          <div className='button-group'>
+          <div className="button-group">
             <button>Acumulado de Conceptos</button>
             <button>Liquidacion de Empleados</button>
             <button>Clasificacion de Conceptos</button>
@@ -59,19 +64,18 @@ function App() {
           </div>
         )}
         {vista === 'reporteQuery' && (
-          <div className='button-group'>
+          <div className="button-group">
             <button>Reporte de Autogestion</button>
             <button>Nomina Gestionable</button>
           </div>
         )}
-        
-
       </main>
     </div>
   );
 }
 
 export default App;
+
 
 
 

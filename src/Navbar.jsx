@@ -1,22 +1,39 @@
 import React from 'react';
 import './Navbar.css';
 
-const Navbar = ({ onShowButtons, onShowLiquidacion, onShowCompensaciones , onShowReporteQuery }) => {
+const Navbar = ({
+  onShowButtons,
+  onShowLiquidacion,
+  onShowCompensaciones,
+  onShowReporteQuery,
+  activeSection // ← sección activa recibida desde el componente padre
+}) => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">REPORTES EMPLEADOS</div>
       <div className="navbar-actions">
         <button
-          className="nav-btn" onClick={onShowButtons}>
+          className={`nav-btn ${activeSection === 'menu' ? 'active' : ''}`}
+          onClick={onShowButtons}
+        >
           Datos Maestros
         </button>
-        <button className="nav-btn" onClick={onShowLiquidacion}>
+        <button
+          className={`nav-btn ${activeSection === 'liquidacion' ? 'active' : ''}`}
+          onClick={onShowLiquidacion}
+        >
           Liquidación
         </button>
-        <button className="nav-btn" onClick={onShowCompensaciones}>
+        <button
+          className={`nav-btn ${activeSection === 'compensaciones' ? 'active' : ''}`}
+          onClick={onShowCompensaciones}
+        >
           Compensaciones
         </button>
-        <button className="nav-btn" onClick={onShowReporteQuery}>
+        <button
+          className={`nav-btn ${activeSection === 'reporteQuery' ? 'active' : ''}`}
+          onClick={onShowReporteQuery}
+        >
           Reporte Query
         </button>
       </div>
@@ -25,3 +42,4 @@ const Navbar = ({ onShowButtons, onShowLiquidacion, onShowCompensaciones , onSho
 };
 
 export default Navbar;
+
