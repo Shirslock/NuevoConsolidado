@@ -1,0 +1,100 @@
+.ingresos-wrapper {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.filtros-ingresos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.filtros-ingresos select {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.mes-año {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mes-año label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.doble-select {
+  display: flex;
+  gap: 10px;
+}
+
+.doble-select select {
+  width: 140px;
+}
+
+.acciones-centradas {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.acciones-centradas button {
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #00274d;
+  color: white;
+  border: 2px solid #ffcc00;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acciones-centradas button:hover {
+  background-color: #003b6f;
+}
+
+.indicadores-egresos {
+  margin: 40px auto 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 1rem;
+}
+
+.tabla-ingresos {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.tabla-ingresos table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 95%;
+  background-color: #f9f9f9;
+}
+
+.tabla-ingresos th,
+.tabla-ingresos td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.tabla-ingresos th {
+  background-color: #00274d;
+  color: white;
+}
+
+.tabla-ingresos tr:hover {
+  background-color: #eef;
+}
+

@@ -1,0 +1,83 @@
+.reporte-wrapper {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.filtros-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.bloque select,
+.bloque input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bloque label {
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.acciones-centradas {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.acciones-centradas button {
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #00274d;
+  color: white;
+  border: 2px solid #ffcc00;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acciones-centradas button:hover {
+  background-color: #003b6f;
+}
+
+.tabla-empleados {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tabla-empleados table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #f9f9f9;
+}
+
+.tabla-empleados th,
+.tabla-empleados td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabla-empleados th {
+  background-color: #00274d;
+  color: white;
+}
+
+.tabla-empleados tr:hover {
+  background-color: #eef;
+}
