@@ -10,7 +10,7 @@ const ReporteEmpleados = () => {
 
   return (
     <div className="reporte-wrapper">
-      <h2>Empleados Activos a la Fecha</h2>
+      <h2>Reporte de Empleados</h2>
 
       <div className="filtros-container">
         {/* Bloque Izquierdo */}
@@ -36,6 +36,8 @@ const ReporteEmpleados = () => {
           <label>Fecha de ingreso desde</label>
           <input type="date" />
           <label>Fecha de ingreso hasta</label>
+          <input type="date" />
+          <label><strong>FECHA DE REPORTE</strong></label>
           <input type="date" />
         </div>
       </div>

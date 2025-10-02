@@ -28,10 +28,11 @@ function App() {
       <main className="main-content">
         {vista === 'menu' && (
           <div className="button-group">
-            <button onClick={mostrarReporte}>Reporte empleados</button>
-            <button onClick={mostrarIngresos}>Reporte de ingresos</button>
-            <button onClick={mostrarEgresos}>Reporte de egresos</button>
-            <button onClick={() => alert('Empleados activos')}>Empleados activos</button>
+            <button onClick={mostrarReporte}>Reporte Empleados al Cierre</button>
+            <button onClick={mostrarReporte}>Empleados Activos a la Fecha</button>
+            <button onClick={mostrarEgresos}>Reporte De Ingresos</button>
+            <button onClick={mostrarIngresos}>Reporte De Egresos</button>
+            
           </div>
         )}
 
@@ -66,7 +67,7 @@ function App() {
         {vista === 'reporteQuery' && (
           <div className="button-group">
             <button>Reporte de Autogestion</button>
-            <button>Nomina Gestionable</button>
+            
           </div>
         )}
       </main>

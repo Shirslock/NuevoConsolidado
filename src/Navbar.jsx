@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 
+
 const Navbar = ({
   onShowButtons,
   onShowLiquidacion,
@@ -37,6 +38,20 @@ const Navbar = ({
           Reporte Query
         </button>
       </div>
+
+      <div className="navbar-center">
+        <img src="D:\Modelos\Consolidado\navbarfalopa/logo-trenes.jpg" alt="Logo Trenes Argentinos(se me rompio :) recien)" className="logo-trenes" />
+      </div>
+
+      <div className="navbar-user">
+        <span className="user-label">Bienvenido Cristian</span>
+        <select className="user-dropdown">
+          <option>Opciones</option>
+          <option>Perfil</option>
+          <option>Cerrar sesión</option>
+        </select>
+      </div>
+
     </nav>
   );
 };
