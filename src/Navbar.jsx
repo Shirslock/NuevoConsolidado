@@ -1,5 +1,7 @@
 import React from 'react';
+import logo from './assets/logo-trenes.jpg'
 import './Navbar.css';
+
 
 
 const Navbar = ({
@@ -40,7 +42,7 @@ const Navbar = ({
       </div>
 
       <div className="navbar-center">
-        <img src="D:\Modelos\Consolidado\navbarfalopa/logo-trenes.jpg" alt="Logo Trenes Argentinos(se me rompio :) recien)" className="logo-trenes" />
+        <img src={logo} alt="Logo Trenes Argentinos(se me rompio :) recien)" className="logo-trenes" />
       </div>
 
       <div className="navbar-user">
