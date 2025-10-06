@@ -87,7 +87,6 @@ const ReporteEgresos = () => {
                   <th>Fecha indemnización</th>
                   <th>Motivo</th>
                   <th>Periodo informado</th>
-                  <th>Correspondencia</th>
                   <th>Tipo</th>
                 </tr>
               </thead>
@@ -106,7 +105,6 @@ const ReporteEgresos = () => {
                   <td>2025-08-01</td>
                   <td>Traslado entre empresas</td>
                   <td>Agosto 2025</td>
-                  <td>Correspondiente</td>
                   <td>Baja pura</td>
                 </tr>
               </tbody>

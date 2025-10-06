@@ -29,6 +29,8 @@ const ReporteEmpleados = () => {
           <div className="fila">
             <select><option>Estado</option></select>
             <select><option>Estudio alcanzado</option></select>
+            <select><option>Sexo</option></select>
+            <select><option>Fuero Gremial</option></select>
           </div>
         </div>
 
