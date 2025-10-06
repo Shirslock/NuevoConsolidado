@@ -1,3 +1,4 @@
+/* Grupo general de botones en menú principal */
 .button-group {
   display: flex;
   justify-content: flex-start;
@@ -7,7 +8,9 @@
   margin-top: 30px;
 }
 
-.button-group button {
+/* Botones individuales */
+.button-group button,
+.grupo-botones button {
   width: 160px;
   height: 160px;
   background-color: #f3f4f5;
@@ -26,17 +29,41 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.button-group button:hover {
+.button-group button:hover,
+.grupo-botones button:hover {
   background-color: #e5f2ff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
 
-
+/* Acciones en navbar */
 .navbar-actions {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
 }
 
+/* Subtítulos institucionales */
+.subtitulo,
+.grupo-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #00274d;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 5px;
+  padding-left: 40px;
+  text-align: left;
+  display: block;
+}
+
+/* Grupo de botones debajo de cada subtítulo */
+.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
 

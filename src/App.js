@@ -43,30 +43,54 @@ function App() {
         {vista === 'ingresos' && <ReporteIngresos />}
         {vista === 'egresos' && <ReporteEgresos />}
         {vista === 'liquidacion' && (
-          <div className="button-group">
+          <div className="seccion-liquidacion">
+            <label className="grupo-label">Costo Laboral</label>
+            <div className="grupo-botones">
             <button>Informe De Agrupamiento De Concepto SOFSE</button>
             <button>Informe Detallado De Los Conceptos</button>
             <button>Acumulado De Conceptos</button>
             <button>Informe Masa Salarial y Costo Laboral</button>
-            <button>Informe Ausentismo</button>
             <button>Liquidacion Empleado</button>
             <button>Horas Extras</button>
             <button>Costo Laboral Por Empleado</button>
-            <button>Categoria Entre Fechas</button>
-            <button>Posiciones Entre Fechas</button>
+            </div>
+          
+            <label className="grupo-label">Informes</label>
+            <div className="grupo-botones">
+              <button>Informe Ausentismo</button>
+              <button>Horas Extras</button>
+              <button>Categoria Entre Fechas</button>
+              <button>Posiciones Entre Fechas</button>
+            </div>
           </div>
+
+            
+            
+
         )}
+
         {vista === 'compensaciones' && (
-          <div className="button-group">
-            <button>Acumulado de Conceptos</button>
-            <button>Liquidacion de Empleados</button>
-            <button>Clasificacion de Conceptos</button>
-            <button>Informe de Valores Fijos Conformados</button>
-            <button>Informe de Valores Variables</button>
-            <button>Variacion Empleados</button>
-            <button>Valor Viatico</button>
+          <div className="seccion-compensaciones">
+           {/* Grupo 1: Costo Laboral */}
+            <label className="grupo-label">Costo Laboral</label>
+            <div className="grupo-botones">
+              <button>Acumulado de Conceptos</button>
+              <button>Liquidación de Empleados</button>
+              <button>Informe de Valores Fijos Conformados</button>
+              <button>Informe de Valores Variables</button>
+              <button>Variación Empleados</button>
+            </div>
+
+            {/* Grupo 2: Datos */}
+            <label className="grupo-label">Datos</label>
+            <div className="grupo-botones">
+              <button>Clasificación de Conceptos</button>
+              <button>Valor Viático</button>
+            </div>
           </div>
         )}
+
+
         {vista === 'reporteQuery' && (
           <div className="button-group">
             <button>Reporte de Autogestion</button>
