@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './ReporteEmpleados.css';
+import './ReporteActivos.css';
 
-const ReporteEmpleados = () => {
+const ReporteActivos = () => {
   const [mostrarTabla, setMostrarTabla] = useState(false);
 
   const handleFiltrar = () => {
@@ -10,7 +10,7 @@ const ReporteEmpleados = () => {
 
   return (
     <div className="reporte-wrapper">
-      <h2>Reporte de Empleados</h2>
+      <h2>Reporte de Empleados Activos a la Fecha</h2>
 
       {/* Contenedor horizontal de filtros */}
       <div className="filtros-container-horizontal">
@@ -51,13 +51,17 @@ const ReporteEmpleados = () => {
 
         {/* Bloque 3: Fechas */}
         <div className="bloque-filtro">
-          <h3>&nbsp;</h3> {/* Espacio para mantener alineación */}
+          <h3>Fechas</h3> {/* Espacio para mantener alineación */}
           <div className="fila">
             <label>Fecha de ingreso desde</label>
             <input type="date" />
           </div>
           <div className="fila">
             <label>Fecha de ingreso hasta</label>
+            <input type="date" />
+          </div>
+          <div className="fila">
+            <label>Fecha de Reporte</label>
             <input type="date" />
           </div>
         </div>
@@ -120,7 +124,4 @@ const ReporteEmpleados = () => {
   );
 };
 
-export default ReporteEmpleados;
-
-
-
+export default ReporteActivos;

@@ -1,44 +1,64 @@
-.ingresos-wrapper {
+/* Contenedor principal */
+.reporte-wrapper {
   padding: 20px;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }
 
-.filtros-ingresos {
+/* Contenedor horizontal de filtros */
+.filtros-container-horizontal {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  margin-top: 30px;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
-.filtros-ingresos select {
-  padding: 8px;
+/* Bloques individuales */
+.bloque-filtro {
   width: 300px;
+  text-align: left;
+  
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.bloque-filtro h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #00274d;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 5px;
+}
+
+/* Fila de inputs/selects */
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.fila input,
+.fila select {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.mes-año {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mes-año label {
+.fila label {
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-right: 10px;
+  min-width: 140px;
+  align-self: center;
 }
 
-.doble-select {
-  display: flex;
-  gap: 10px;
-}
-
-.doble-select select {
-  width: 140px;
-}
-
+/* Botones de acción */
 .acciones-centradas {
   margin-top: 30px;
   display: flex;
@@ -61,40 +81,41 @@
   background-color: #003b6f;
 }
 
-.indicadores-egresos {
-  margin: 40px auto 20px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 1rem;
-}
-
-.tabla-ingresos {
-  margin-top: 20px;
+/* Tabla de resultados */
+.tabla-empleados {
+  margin-top: 40px;
   text-align: center;
 }
 
-.tabla-ingresos table {
+.tabla-empleados table {
   margin: 0 auto;
   border-collapse: collapse;
-  width: 95%;
+  width: 90%;
   background-color: #f9f9f9;
 }
 
-.tabla-ingresos th,
-.tabla-ingresos td {
+.tabla-empleados th,
+.tabla-empleados td {
   border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-  font-size: 0.9rem;
+  padding: 10px;
+  text-align: left;
 }
 
-.tabla-ingresos th {
+.tabla-empleados th {
   background-color: #00274d;
   color: white;
 }
 
-.tabla-ingresos tr:hover {
+.tabla-empleados tr:hover {
   background-color: #eef;
 }
+
+/* Botón lupa */
+.lupa-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
 

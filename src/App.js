@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import ReporteEmpleados from './ReporteEmpleados';
 import ReporteIngresos from './ReporteIngresos';
 import ReporteEgresos from './ReporteEgresos';
+import ReporteActivos from './ReporteActivos';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 
   const mostrarMenu = () => setVista('menu');
   const mostrarReporte = () => setVista('reporte');
+  const mostrarActivos = () => setVista('activos');
   const mostrarIngresos = () => setVista('ingresos');
   const mostrarEgresos = () => setVista('egresos');
   const mostrarLiquidacion = () => setVista('liquidacion');
@@ -29,14 +31,15 @@ function App() {
         {vista === 'menu' && (
           <div className="button-group">
             <button onClick={mostrarReporte}>Reporte Empleados al Cierre</button>
-            <button onClick={mostrarReporte}>Empleados Activos a la Fecha</button>
-            <button onClick={mostrarEgresos}>Reporte De Ingresos</button>
-            <button onClick={mostrarIngresos}>Reporte De Egresos</button>
+            <button onClick={mostrarActivos}>Empleados Activos a la Fecha</button>
+            <button onClick={mostrarIngresos}>Reporte De Ingresos</button>
+            <button onClick={mostrarEgresos}>Reporte De Egresos</button>
             
           </div>
         )}
 
         {vista === 'reporte' && <ReporteEmpleados />}
+        {vista === 'activos' && <ReporteActivos />}
         {vista === 'ingresos' && <ReporteIngresos />}
         {vista === 'egresos' && <ReporteEgresos />}
         {vista === 'liquidacion' && (
