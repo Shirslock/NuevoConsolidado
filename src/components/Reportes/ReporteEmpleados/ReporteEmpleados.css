@@ -1,0 +1,191 @@
+.reporte-container {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.btn-back {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #5eb3e4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-back:hover {
+  background-color: #4a9fd1;
+}
+
+.reporte-title {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.filtros-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.filtro-box {
+  width: 300px;
+  text-align: left;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filtro-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #5eb3e4;
+  padding-bottom: 8px;
+}
+
+.filtro-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filtro-row-vertical {
+  margin-bottom: 15px;
+}
+
+.filtro-label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.filtro-input {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.filtro-input:focus {
+  outline: none;
+  border-color: #5eb3e4;
+}
+
+.acciones-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: #5eb3e4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #4a9fd1;
+}
+
+.btn-secondary {
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: white;
+  color: #5eb3e4;
+  border: 1px solid #5eb3e4;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #5eb3e4;
+  color: white;
+}
+
+.btn-outline {
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: white;
+  color: #666;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: #f5f5f5;
+}
+
+.tabla-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tabla-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.tabla-resultados {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 90%;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabla-resultados thead tr {
+  background-color: #f8f9fa;
+}
+
+.tabla-resultados th {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+}
+
+.tabla-resultados td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  color: #666;
+  text-align: left;
+}
+
+.tabla-resultados tbody tr {
+  transition: background-color 0.2s;
+}
+
+.tabla-resultados tbody tr:hover {
+  background-color: #f8f9fa;
+}

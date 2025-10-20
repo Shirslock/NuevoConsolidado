@@ -1,106 +1,81 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
-import ReporteEmpleados from './ReporteEmpleados';
-import ReporteIngresos from './ReporteIngresos';
-import ReporteEgresos from './ReporteEgresos';
-import ReporteActivos from './ReporteActivos';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import Home from './components/Home/Home';
+import ReporteEmpleados from './components/Reportes/ReporteEmpleados/ReporteEmpleados';
+import ReporteActivos from './components/Reportes/ReporteActivos/ReporteActivos';
+import ReporteIngresos from './components/Reportes/ReporteIngresos/ReporteIngresos';
+import ReporteEgresos from './components/Reportes/ReporteEgresos/ReporteEgresos';
 import './App.css';
 
-function App() {
-  const [vista, setVista] = useState('menu');
+const App = () => {
+  const [currentView, setCurrentView] = useState('home');
+  const [activeSection, setActiveSection] = useState('Reportes');
 
-  const mostrarMenu = () => setVista('menu');
-  const mostrarReporte = () => setVista('reporte');
-  const mostrarActivos = () => setVista('activos');
-  const mostrarIngresos = () => setVista('ingresos');
-  const mostrarEgresos = () => setVista('egresos');
-  const mostrarLiquidacion = () => setVista('liquidacion');
-  const mostrarCompensaciones = () => setVista('compensaciones');
-  const mostrarQuery = () => setVista('reporteQuery');
+  const handleNavigation = (view) => {
+    setCurrentView(view);
+    
+    // Actualizar el título de la sección según la vista
+    switch(view) {
+      case 'reporteEmpleados':
+        setActiveSection('Reporte de Empleados');
+        break;
+      case 'reporteActivos':
+        setActiveSection('Reporte de Empleados Activos');
+        break;
+      case 'reporteIngresos':
+        setActiveSection('Reporte de Ingresos');
+        break;
+      case 'reporteEgresos':
+        setActiveSection('Reporte de Egresos');
+        break;
+      default:
+        setActiveSection('Reportes');
+    }
+  };
+
+  const handleBackToHome = () => {
+    setCurrentView('home');
+    setActiveSection('Reportes');
+  };
 
   return (
-    <div>
+    <div className="app">
       <Navbar
-        onShowButtons={mostrarMenu}
-        onShowLiquidacion={mostrarLiquidacion}
-        onShowCompensaciones={mostrarCompensaciones}
-        onShowReporteQuery={mostrarQuery}
-        activeSection={vista} // ← pasamos la vista actual al Navbar
+        userName="CRISTIAN ALBERTO GIL"
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
       />
-      <main className="main-content">
-        {vista === 'menu' && (
-          <div className="button-group">
-            <button onClick={mostrarReporte}>Reporte Empleados al Cierre</button>
-            <button onClick={mostrarActivos}>Empleados Activos a la Fecha</button>
-            <button onClick={mostrarIngresos}>Reporte De Ingresos</button>
-            <button onClick={mostrarEgresos}>Reporte De Egresos</button>
-            
-          </div>
-        )}
 
-        {vista === 'reporte' && <ReporteEmpleados />}
-        {vista === 'activos' && <ReporteActivos />}
-        {vista === 'ingresos' && <ReporteIngresos />}
-        {vista === 'egresos' && <ReporteEgresos />}
-        {vista === 'liquidacion' && (
-          <div className="seccion-liquidacion">
-            <label className="grupo-label">Costo Laboral</label>
-            <div className="grupo-botones">
-            <button>Informe De Agrupamiento De Concepto SOFSE</button>
-            <button>Informe Detallado De Los Conceptos</button>
-            <button>Acumulado De Conceptos</button>
-            <button>Informe Masa Salarial y Costo Laboral</button>
-            <button>Liquidacion Empleado</button>
-            <button>Horas Extras</button>
-            <button>Costo Laboral Por Empleado</button>
-            </div>
+      <div className="app-layout">
+        <Sidebar
+          activeSection={activeSection}
+          onSectionChange={setActiveSection}
+        />
+
+        <main className="app-main">
+          {currentView === 'home' && <Home onNavigate={handleNavigation} />}
           
-            <label className="grupo-label">Informes</label>
-            <div className="grupo-botones">
-              <button>Informe Ausentismo</button>
-              <button>Horas Extras</button>
-              <button>Categoria Entre Fechas</button>
-              <button>Posiciones Entre Fechas</button>
-            </div>
-          </div>
-
-            
-            
-
-        )}
-
-        {vista === 'compensaciones' && (
-          <div className="seccion-compensaciones">
-           {/* Grupo 1: Costo Laboral */}
-            <label className="grupo-label">Costo Laboral</label>
-            <div className="grupo-botones">
-              <button>Acumulado de Conceptos</button>
-              <button>Liquidación de Empleados</button>
-              <button>Informe de Valores Fijos Conformados</button>
-              <button>Informe de Valores Variables</button>
-              <button>Variación Empleados</button>
-            </div>
-
-            {/* Grupo 2: Datos */}
-            <label className="grupo-label">Datos</label>
-            <div className="grupo-botones">
-              <button>Clasificación de Conceptos</button>
-              <button>Valor Viático</button>
-            </div>
-          </div>
-        )}
-
-
-        {vista === 'reporteQuery' && (
-          <div className="button-group">
-            <button>Reporte de Autogestion</button>
-            
-          </div>
-        )}
-      </main>
+          {currentView === 'reporteEmpleados' && (
+            <ReporteEmpleados onBack={handleBackToHome} />
+          )}
+          
+          {currentView === 'reporteActivos' && (
+            <ReporteActivos onBack={handleBackToHome} />
+          )}
+          
+          {currentView === 'reporteIngresos' && (
+            <ReporteIngresos onBack={handleBackToHome} />
+          )}
+          
+          {currentView === 'reporteEgresos' && (
+            <ReporteEgresos onBack={handleBackToHome} />
+          )}
+        </main>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
 

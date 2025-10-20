@@ -1,0 +1,273 @@
+.reporte-container {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.btn-back {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #5eb3e4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-back:hover {
+  background-color: #4a9fd1;
+}
+
+.reporte-title {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+/* Contenedor de filtros para Ingresos */
+.filtros-ingresos-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.filtro-box {
+  width: 300px;
+  text-align: left;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filtro-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #5eb3e4;
+  padding-bottom: 8px;
+}
+
+.filtro-row-vertical {
+  margin-bottom: 15px;
+}
+
+.filtro-label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.filtro-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.filtro-input:focus {
+  outline: none;
+  border-color: #5eb3e4;
+}
+
+/* Selectores dobles para mes y año */
+.doble-select {
+  display: flex;
+  gap: 10px;
+}
+
+.filtro-input-small {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.filtro-input-small:focus {
+  outline: none;
+  border-color: #5eb3e4;
+}
+
+/* Botones de acción */
+.acciones-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: #5eb3e4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #4a9fd1;
+}
+
+.btn-secondary {
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: white;
+  color: #5eb3e4;
+  border: 1px solid #5eb3e4;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #5eb3e4;
+  color: white;
+}
+
+.btn-outline {
+  padding: 12px 30px;
+  font-weight: 600;
+  background-color: white;
+  color: #666;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: #f5f5f5;
+}
+
+/* Indicadores */
+.indicadores-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+.indicador {
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.indicador strong {
+  color: #666;
+  font-weight: 600;
+}
+
+.indicador span {
+  color: #5eb3e4;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 8px;
+}
+
+.indicador-total {
+  background-color: #5eb3e4;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.indicador-total strong {
+  color: white;
+  font-weight: 600;
+}
+
+.indicador-total span {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 8px;
+}
+
+/* Tabla de resultados */
+.tabla-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tabla-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.tabla-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-resultados {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 95%;
+  background-color: white;
+  min-width: 1200px;
+}
+
+.tabla-resultados thead tr {
+  background-color: #f8f9fa;
+}
+
+.tabla-resultados th {
+  border: 1px solid #e0e0e0;
+  padding: 12px 10px;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.tabla-resultados td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 10px;
+  color: #666;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.tabla-resultados tbody tr {
+  transition: background-color 0.2s;
+}
+
+.tabla-resultados tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+  .filtros-ingresos-container {
+    flex-wrap: wrap;
+  }
+  
+  .filtro-box {
+    width: 100%;
+    max-width: 400px;
+  }
+}
