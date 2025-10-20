@@ -128,7 +128,7 @@ const Home = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Sección Transversal - TERCERO */}
+      {/* Sección Liquidacion - TERCERO */}
       <section className="section-box">
         <h2 className="section-title">Liquidacion</h2>
         <div className="cards-grid">
@@ -144,6 +144,26 @@ const Home = ({ onNavigate }) => {
           ))}
         </div>
       </section>
+
+
+      {/* Sección XXXXX - Cuarto*/}
+      <section className="section-box">
+        <h2 className="section-title">Aca iria otra seccion con reportes</h2>
+        <div className="cards-grid">
+          {transversalApps.map((app) => (
+            <AppCard
+              key={app.id}
+              icon={app.icon}
+              title={app.title}
+              onClick={() => console.log(`Clicked ${app.title}`)}
+              isFavorite={favorites[app.favoriteKey]}
+              onToggleFavorite={() => toggleFavorite(app.favoriteKey)}
+            />
+          ))}
+        </div>
+      </section>
+
+      
     </div>
   );
 };

@@ -47,6 +47,17 @@ const App = () => {
     }
   };
 
+  // Navegación desde el menú de configuración del Navbar
+  const handleNavigateToConfig = (opcion) => {
+    if (opcion === 'familiaPuesto') {
+      setCurrentView('familiaPuesto');
+      setActiveSection('Familia de Puesto');
+    } else if (opcion === 'otroABM') {
+      // Aquí puedes agregar más opciones
+      console.log('Otra configuración seleccionada');
+    }
+  };
+
   const handleBackToHome = () => {
     setCurrentView('home');
     setActiveSection('Reportes');
@@ -58,6 +69,7 @@ const App = () => {
         userName="CRISTIAN ALBERTO GIL"
         activeSection={activeSection}
         onSectionChange={setActiveSection}
+        onNavigateToConfig={handleNavigateToConfig}
       />
 
       <div className="app-layout">
