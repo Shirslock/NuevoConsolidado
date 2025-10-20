@@ -6,6 +6,7 @@ import ReporteEmpleados from './components/Reportes/ReporteEmpleados/ReporteEmpl
 import ReporteActivos from './components/Reportes/ReporteActivos/ReporteActivos';
 import ReporteIngresos from './components/Reportes/ReporteIngresos/ReporteIngresos';
 import ReporteEgresos from './components/Reportes/ReporteEgresos/ReporteEgresos';
+import FamiliaPuesto from './components/Configuraciones/FamiliaPuesto/FamiliaPuesto';
 import './App.css';
 
 const App = () => {
@@ -15,7 +16,6 @@ const App = () => {
   const handleNavigation = (view) => {
     setCurrentView(view);
     
-    // Actualizar el título de la sección según la vista
     switch(view) {
       case 'reporteEmpleados':
         setActiveSection('Reporte de Empleados');
@@ -29,8 +29,21 @@ const App = () => {
       case 'reporteEgresos':
         setActiveSection('Reporte de Egresos');
         break;
+      case 'familiaPuesto':
+        setActiveSection('Familia de Puesto');
+        break;
       default:
         setActiveSection('Reportes');
+    }
+  };
+
+  const handleSectionChange = (section) => {
+    setActiveSection(section);
+    
+    if (section === 'Reportes') {
+      setCurrentView('home');
+    } else if (section === 'Familia de Puesto') {
+      setCurrentView('familiaPuesto');
     }
   };
 
@@ -50,7 +63,7 @@ const App = () => {
       <div className="app-layout">
         <Sidebar
           activeSection={activeSection}
-          onSectionChange={setActiveSection}
+          onSectionChange={handleSectionChange}
         />
 
         <main className="app-main">
@@ -70,6 +83,10 @@ const App = () => {
           
           {currentView === 'reporteEgresos' && (
             <ReporteEgresos onBack={handleBackToHome} />
+          )}
+
+          {currentView === 'familiaPuesto' && (
+            <FamiliaPuesto onBack={handleBackToHome} />
           )}
         </main>
       </div>
