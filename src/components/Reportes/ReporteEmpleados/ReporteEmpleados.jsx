@@ -168,8 +168,6 @@ const ReporteEmpleados = ({ onBack }) => {
               <option>Gerente General</option>
               <option>Gerente</option>
               <option>Subgerente</option>
-              
-
             </select>
           </div>
           <div className="filtro-row">
@@ -215,7 +213,7 @@ const ReporteEmpleados = ({ onBack }) => {
           <div className="tabla-header-info">
             <h3 className="tabla-title">Resultado de búsqueda</h3>
             <div className="total-resultados">
-              Total de resultados: <span className="total-numero">{empleadosData.length}</span>
+              Cantidad de Registros: <span className="total-numero">{empleadosData.length}</span>
             </div>
           </div>
           <div className="tabla-wrapper">

@@ -199,7 +199,7 @@ const ReporteActivos = ({ onBack }) => {
           <div className="tabla-header-info">
             <h3 className="tabla-title">Resultado de búsqueda</h3>
             <div className="total-resultados">
-              Total de resultados: <span className="total-numero">{empleadosData.length}</span>
+              Cantidad de Registros: <span className="total-numero">{empleadosData.length}</span>
             </div>
           </div>
           <div className="tabla-wrapper">
