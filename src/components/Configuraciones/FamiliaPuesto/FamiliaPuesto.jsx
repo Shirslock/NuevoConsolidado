@@ -26,21 +26,24 @@ const FamiliaPuesto = ({ onBack }) => {
       id: 2,
       codigo: 'FP002',
       nombre: 'Vicepresidente',
-      funcion: 'Operación Ferroviaria',
+      funcion: '300000002',
       estado: 'Activo'
     },
     {
       id: 3,
       codigo: 'FP003',
       nombre: 'Director',
-      funcion: 'Gestión Administrativa',
+      funcion: '300000003',
       estado: 'Inactivo'
     }
   ]);
 
   const funciones = [
     { id: 1, nombre: '300000001' },
-    { id: 2, nombre: 'Operación Ferroviaria' }
+    { id: 2, nombre: '300000002' },
+    { id: 3, nombre: '300000003' },
+    { id: 4, nombre: '300000004' },
+    { id: 5, nombre: '300000005' },
   ];
 
   const handleInputChange = (e) => {

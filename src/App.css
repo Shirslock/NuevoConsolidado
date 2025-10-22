@@ -3,13 +3,8 @@
   background-color: #f5f5f5;
 }
 
-.app-layout {
-  display: flex;
-  background-color: #f5f5f5;
+.app-main-full {
   min-height: calc(100vh - 70px);
-}
-
-.app-main {
-  flex: 1;
   overflow-y: auto;
+  background-color: #f5f5f5;
 }

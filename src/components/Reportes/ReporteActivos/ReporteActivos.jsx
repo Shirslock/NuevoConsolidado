@@ -71,7 +71,7 @@ const ReporteActivos = ({ onBack }) => {
             <select className="filtro-input">
               <option>División</option>
               <option>Central</option>
-              <option>Operativa</option>
+              <option>San Martin</option>
               <option>Belgrano Sur</option>
             </select>
             <select className="filtro-input">
@@ -84,9 +84,9 @@ const ReporteActivos = ({ onBack }) => {
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Área Personal</option>
-              <option>RRHH</option>
-              <option>UF Amba</option>
-              <option>Fuera de Convenio</option>
+              <option>AC-APDFA Central</option>
+              <option>UF-Amba</option>
+              <option>LF-La Fraternidad</option>
             </select>
             <select className="filtro-input">
               <option>Grupo Profesional</option>
@@ -99,17 +99,21 @@ const ReporteActivos = ({ onBack }) => {
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Familia de puestos</option>
-              <option>Administración</option>
-              <option>Operaciones</option>
-              <option>Mantenimiento</option>
+              <option>Presidente</option>
+              <option>VicePresidente</option>
+              <option>Gerente General</option>
+              <option>Gerente</option>
+              <option>Subgerente</option>
             </select>
           </div>
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Unidad Organizativa</option>
-              <option>Gerencia General</option>
-              <option>Gerencia RRHH</option>
-              <option>Gerencia Operativa</option>
+              <option>Todos</option>
+              <option>Presidencia</option>
+              <option>Gerencia Seguridad Operacional</option>
+              <option>Jefatura de Gabinete</option>
+              <option>Secretaria General</option>
             </select>
           </div>
         </div>
@@ -171,10 +175,10 @@ const ReporteActivos = ({ onBack }) => {
               <tbody>
                 <tr>
                   <td>Operativa</td>
-                  <td>RRHH</td>
+                  <td>AC-APDFA Central</td>
                   <td>12345</td>
                   <td>Pérez Juan</td>
-                  <td>Administración</td>
+                  <td>Presidente</td>
                   <td>Profesional</td>
                   <td>Analista</td>
                   <td>Zona Norte</td>
@@ -190,10 +194,10 @@ const ReporteActivos = ({ onBack }) => {
                 </tr>
                 <tr>
                   <td>Central</td>
-                  <td>Fuera de Convenio</td>
+                  <td>FC-Fuera de Convenio</td>
                   <td>12346</td>
                   <td>González María</td>
-                  <td>Operaciones</td>
+                  <td>Vicepresidente</td>
                   <td>Coordinador</td>
                   <td>Coordinador de Área</td>
                   <td>Retiro</td>
@@ -209,10 +213,10 @@ const ReporteActivos = ({ onBack }) => {
                 </tr>
                 <tr>
                   <td>Belgrano Sur</td>
-                  <td>UF Amba</td>
+                  <td>UF-Amba</td>
                   <td>12347</td>
                   <td>Rodríguez Carlos</td>
-                  <td>Mantenimiento</td>
+                  <td>Asesos Gerencial</td>
                   <td>Profesional</td>
                   <td>Técnico</td>
                   <td>Tapiales</td>

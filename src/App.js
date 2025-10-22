@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Sidebar from './components/Sidebar/Sidebar';
 import Home from './components/Home/Home';
 import ReporteEmpleados from './components/Reportes/ReporteEmpleados/ReporteEmpleados';
 import ReporteActivos from './components/Reportes/ReporteActivos/ReporteActivos';
@@ -37,16 +36,6 @@ const App = () => {
     }
   };
 
-  const handleSectionChange = (section) => {
-    setActiveSection(section);
-    
-    if (section === 'Reportes') {
-      setCurrentView('home');
-    } else if (section === 'Familia de Puesto') {
-      setCurrentView('familiaPuesto');
-    }
-  };
-
   // Navegación desde el menú de configuración del Navbar
   const handleNavigateToConfig = (opcion) => {
     if (opcion === 'familiaPuesto') {
@@ -68,40 +57,32 @@ const App = () => {
       <Navbar
         userName="CRISTIAN ALBERTO GIL"
         activeSection={activeSection}
-        onSectionChange={setActiveSection}
         onNavigateToConfig={handleNavigateToConfig}
       />
 
-      <div className="app-layout">
-        <Sidebar
-          activeSection={activeSection}
-          onSectionChange={handleSectionChange}
-        />
+      <main className="app-main-full">
+        {currentView === 'home' && <Home onNavigate={handleNavigation} />}
+        
+        {currentView === 'reporteEmpleados' && (
+          <ReporteEmpleados onBack={handleBackToHome} />
+        )}
+        
+        {currentView === 'reporteActivos' && (
+          <ReporteActivos onBack={handleBackToHome} />
+        )}
+        
+        {currentView === 'reporteIngresos' && (
+          <ReporteIngresos onBack={handleBackToHome} />
+        )}
+        
+        {currentView === 'reporteEgresos' && (
+          <ReporteEgresos onBack={handleBackToHome} />
+        )}
 
-        <main className="app-main">
-          {currentView === 'home' && <Home onNavigate={handleNavigation} />}
-          
-          {currentView === 'reporteEmpleados' && (
-            <ReporteEmpleados onBack={handleBackToHome} />
-          )}
-          
-          {currentView === 'reporteActivos' && (
-            <ReporteActivos onBack={handleBackToHome} />
-          )}
-          
-          {currentView === 'reporteIngresos' && (
-            <ReporteIngresos onBack={handleBackToHome} />
-          )}
-          
-          {currentView === 'reporteEgresos' && (
-            <ReporteEgresos onBack={handleBackToHome} />
-          )}
-
-          {currentView === 'familiaPuesto' && (
-            <FamiliaPuesto onBack={handleBackToHome} />
-          )}
-        </main>
-      </div>
+        {currentView === 'familiaPuesto' && (
+          <FamiliaPuesto onBack={handleBackToHome} />
+        )}
+      </main>
     </div>
   );
 };

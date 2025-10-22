@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Menu, Settings } from 'lucide-react';
 import './Navbar.css';
 
-const Navbar = ({ userName, activeSection, onSectionChange, onNavigateToConfig }) => {
+const Navbar = ({ userName, activeSection, onNavigateToConfig }) => {
   const [menuConfigOpen, setMenuConfigOpen] = useState(false);
   const menuRef = useRef(null);
 
