@@ -26,7 +26,8 @@
   font-size: 1.5rem;
 }
 
-.filtros-container {
+/* Contenedor horizontal de filtros */
+.filtros-empleados-container {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -53,6 +54,7 @@
   padding-bottom: 8px;
 }
 
+/* Fila de inputs/selects */
 .filtro-row {
   display: flex;
   flex-wrap: wrap;
@@ -86,6 +88,7 @@
   border-color: #5eb3e4;
 }
 
+/* Botones de acción */
 .acciones-container {
   margin-top: 30px;
   display: flex;
@@ -142,6 +145,32 @@
   background-color: #f5f5f5;
 }
 
+/* Header de la tabla con contador */
+.tabla-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.total-resultados {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.total-numero {
+  color: #5eb3e4;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Tabla de resultados */
 .tabla-container {
   margin-top: 40px;
   text-align: center;
@@ -153,14 +182,18 @@
   font-size: 1.2rem;
 }
 
+.tabla-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .tabla-resultados {
   margin: 0 auto;
   border-collapse: collapse;
-  width: 90%;
+  width: 95%;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  overflow: hidden;
+  min-width: 1300px;
 }
 
 .tabla-resultados thead tr {
@@ -169,17 +202,20 @@
 
 .tabla-resultados th {
   border: 1px solid #e0e0e0;
-  padding: 12px;
+  padding: 12px 10px;
   color: #333;
   font-weight: 600;
   text-align: left;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .tabla-resultados td {
   border: 1px solid #e0e0e0;
-  padding: 12px;
+  padding: 12px 10px;
   color: #666;
   text-align: left;
+  font-size: 0.9rem;
 }
 
 .tabla-resultados tbody tr {
@@ -188,4 +224,29 @@
 
 .tabla-resultados tbody tr:hover {
   background-color: #f8f9fa;
+}
+
+/* Botón lupa */
+.btn-lupa {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.btn-lupa:hover {
+  transform: scale(1.2);
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+  .filtros-empleados-container {
+    flex-wrap: wrap;
+  }
+  
+  .filtro-box {
+    width: 100%;
+    max-width: 400px;
+  }
 }

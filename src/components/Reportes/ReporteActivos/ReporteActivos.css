@@ -225,3 +225,28 @@
     max-width: 400px;
   }
 }
+
+/* Header de la tabla con contador */
+.tabla-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.total-resultados {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.total-numero {
+  color: #5eb3e4;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 8px;
+}

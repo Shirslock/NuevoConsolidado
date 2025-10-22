@@ -4,6 +4,78 @@ import './ReporteEmpleados.css';
 const ReporteEmpleados = ({ onBack }) => {
   const [mostrarTabla, setMostrarTabla] = useState(false);
 
+  // Datos de ejemplo - misma estructura que ReporteActivos
+  const empleadosData = [
+    {
+      division: 'San Martin',
+      areaPersonal: 'FC-Fuera de Convenio',
+      legajo: '12345',
+      apellidoNombre: 'Pérez Juan',
+      familiaPuestos: 'Gerente',
+      grupoProfesional: 'Profesional',
+      posicion: 'Analista',
+      subdivision: 'Zona Norte',
+      fechaAntiguedad: '2019-05-01',
+      ingreso: '2020-01-15',
+      fechaIndemnizacion: '2025-08-01',
+      egreso: '-'
+    },
+    {
+      division: 'Central',
+      areaPersonal: 'FC-Fuera de Convenio',
+      legajo: '12346',
+      apellidoNombre: 'González María',
+      familiaPuestos: 'Gerente',
+      grupoProfesional: 'Coordinador',
+      posicion: 'Coordinador de Área',
+      subdivision: 'Retiro',
+      fechaAntiguedad: '2018-03-10',
+      ingreso: '2018-06-01',
+      fechaIndemnizacion: '2025-09-01',
+      egreso: '-'
+    },
+    {
+      division: 'Belgrano Sur',
+      areaPersonal: 'UF-Amba',
+      legajo: '12347',
+      apellidoNombre: 'Rodríguez Carlos',
+      familiaPuestos: 'Subgerente',
+      grupoProfesional: 'Profesional',
+      posicion: 'Técnico',
+      subdivision: 'Tapiales',
+      fechaAntiguedad: '2020-07-15',
+      ingreso: '2020-09-01',
+      fechaIndemnizacion: '2026-01-01',
+      egreso: '-'
+    },
+    {
+      division: 'Regionales',
+      areaPersonal: 'UF-Amba',
+      legajo: '12347',
+      apellidoNombre: 'Pedro Pedrito',
+      familiaPuestos: 'Subgerente',
+      grupoProfesional: 'Profesional',
+      posicion: 'Técnico',
+      subdivision: 'Cucha Cucha',
+      fechaAntiguedad: '2020-07-15',
+      ingreso: '2020-09-01',
+      fechaIndemnizacion: '2026-01-01',
+      egreso: '-'
+
+    }
+
+
+
+  ];
+
+  const handleFiltrar = () => {
+    setMostrarTabla(true);
+  };
+
+  const handleLimpiar = () => {
+    setMostrarTabla(false);
+  };
+
   return (
     <div className="reporte-container">
       <button className="btn-back" onClick={onBack}>
@@ -12,7 +84,9 @@ const ReporteEmpleados = ({ onBack }) => {
 
       <h2 className="reporte-title">Reporte de Empleados</h2>
 
-      <div className="filtros-container">
+      {/* Contenedor horizontal de filtros */}
+      <div className="filtros-empleados-container">
+        {/* Bloque 1: Datos personales */}
         <div className="filtro-box">
           <h3 className="filtro-title">Datos personales</h3>
           <div className="filtro-row">
@@ -61,7 +135,7 @@ const ReporteEmpleados = ({ onBack }) => {
             <select className="filtro-input">
               <option>División</option>
               <option>Central</option>
-              <option>San Martin</option>
+              <option>Operativa</option>
               <option>Belgrano Sur</option>
             </select>
             <select className="filtro-input">
@@ -74,9 +148,9 @@ const ReporteEmpleados = ({ onBack }) => {
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Área Personal</option>
-              <option>AC-APDFA Central</option>
-              <option>UF-Amba</option>
               <option>LF-La Fraternidad</option>
+              <option>UF-Amba</option>
+              <option>FC-Fuera de Convenio</option>
             </select>
             <select className="filtro-input">
               <option>Grupo Profesional</option>
@@ -90,25 +164,25 @@ const ReporteEmpleados = ({ onBack }) => {
             <select className="filtro-input">
               <option>Familia de puestos</option>
               <option>Presidente</option>
-              <option>VicePresidente</option>
+              <option>Vicepresidente</option>
               <option>Gerente General</option>
               <option>Gerente</option>
               <option>Subgerente</option>
+              
+
             </select>
           </div>
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Unidad Organizativa</option>
-              <option>Todos</option>
-              <option>Presidencia</option>
-              <option>Gerencia Seguridad Operacional</option>
-              <option>Jefatura de Gabinete</option>
-              <option>Secretaria General</option>
+              <option>Gerencia General</option>
+              <option>Gerencia RRHH</option>
+              <option>Gerencia Operativa</option>
             </select>
           </div>
         </div>
 
-        {/* Bloque Fechas */}
+        {/* Bloque 3: Fechas (SIN fecha de reporte) */}
         <div className="filtro-box">
           <h3 className="filtro-title">Fechas</h3>
           <div className="filtro-row-vertical">
@@ -124,17 +198,13 @@ const ReporteEmpleados = ({ onBack }) => {
 
       {/* Botones de acción */}
       <div className="acciones-container">
-        <button
-          className="btn-primary"
-          onClick={() => setMostrarTabla(true)}
-        >
+        <button className="btn-primary" onClick={handleFiltrar}>
           Filtrar
         </button>
-        <button className="btn-secondary">Exportar</button>
-        <button
-          className="btn-outline"
-          onClick={() => setMostrarTabla(false)}
-        >
+        <button className="btn-secondary">
+          Exportar
+        </button>
+        <button className="btn-outline" onClick={handleLimpiar}>
           Limpiar búsqueda
         </button>
       </div>
@@ -142,10 +212,16 @@ const ReporteEmpleados = ({ onBack }) => {
       {/* Tabla de resultados */}
       {mostrarTabla && (
         <div className="tabla-container">
-          <h3 className="tabla-title">Resultado de búsqueda</h3>
-          <table className="tabla-resultados">
-            <thead>
-              <tr>
+          <div className="tabla-header-info">
+            <h3 className="tabla-title">Resultado de búsqueda</h3>
+            <div className="total-resultados">
+              Total de resultados: <span className="total-numero">{empleadosData.length}</span>
+            </div>
+          </div>
+          <div className="tabla-wrapper">
+            <table className="tabla-resultados">
+              <thead>
+                <tr>
                   <th>División</th>
                   <th>Área de Personal</th>
                   <th>Legajo</th>
@@ -162,27 +238,30 @@ const ReporteEmpleados = ({ onBack }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Operativa</td>
-                  <td>RRHH</td>
-                  <td>12345</td>
-                  <td>Pérez Juan</td>
-                  <td>Gerente</td>
-                  <td>Profesional</td>
-                  <td>Analista</td>
-                  <td>Zona Norte</td>
-                  <td>2019-05-01</td>
-                  <td>2020-01-15</td>
-                  <td>2025-08-01</td>
-                  <td>-</td>
-                  <td>
-                    <button className="btn-lupa" title="Ver detalle">
-                      🔍
-                    </button>
-                  </td>
-                </tr>
-            </tbody>
-          </table>
+                {empleadosData.map((empleado, index) => (
+                  <tr key={index}>
+                    <td>{empleado.division}</td>
+                    <td>{empleado.areaPersonal}</td>
+                    <td>{empleado.legajo}</td>
+                    <td>{empleado.apellidoNombre}</td>
+                    <td>{empleado.familiaPuestos}</td>
+                    <td>{empleado.grupoProfesional}</td>
+                    <td>{empleado.posicion}</td>
+                    <td>{empleado.subdivision}</td>
+                    <td>{empleado.fechaAntiguedad}</td>
+                    <td>{empleado.ingreso}</td>
+                    <td>{empleado.fechaIndemnizacion}</td>
+                    <td>{empleado.egreso}</td>
+                    <td>
+                      <button className="btn-lupa" title="Ver detalle">
+                        🔍
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>

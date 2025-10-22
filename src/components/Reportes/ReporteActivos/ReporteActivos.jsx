@@ -4,6 +4,52 @@ import './ReporteActivos.css';
 const ReporteActivos = ({ onBack }) => {
   const [mostrarTabla, setMostrarTabla] = useState(false);
 
+  // Datos de ejemplo - puedes agregar más registros
+  const empleadosData = [
+    {
+      division: 'San Martin',
+      areaPersonal: 'FC-Fuera de Convenio',
+      legajo: '12345',
+      apellidoNombre: 'Pérez Juan',
+      familiaPuestos: 'Gerente',
+      grupoProfesional: 'Profesional',
+      posicion: 'Analista',
+      subdivision: 'Zona Norte',
+      fechaAntiguedad: '2019-05-01',
+      ingreso: '2020-01-15',
+      fechaIndemnizacion: '2025-08-01',
+      egreso: '-'
+    },
+    {
+      division: 'Central',
+      areaPersonal: 'FC-Fuera de Convenio',
+      legajo: '12346',
+      apellidoNombre: 'González María',
+      familiaPuestos: 'Gerente',
+      grupoProfesional: 'Coordinador',
+      posicion: 'Coordinador de Área',
+      subdivision: 'Retiro',
+      fechaAntiguedad: '2018-03-10',
+      ingreso: '2018-06-01',
+      fechaIndemnizacion: '2025-09-01',
+      egreso: '-'
+    },
+    {
+      division: 'Belgrano Sur',
+      areaPersonal: 'UF-Amba',
+      legajo: '12347',
+      apellidoNombre: 'Rodríguez Carlos',
+      familiaPuestos: 'Subgerente',
+      grupoProfesional: 'Profesional',
+      posicion: 'Técnico',
+      subdivision: 'Tapiales',
+      fechaAntiguedad: '2020-07-15',
+      ingreso: '2020-09-01',
+      fechaIndemnizacion: '2026-01-01',
+      egreso: '-'
+    }
+  ];
+
   const handleFiltrar = () => {
     setMostrarTabla(true);
   };
@@ -71,7 +117,7 @@ const ReporteActivos = ({ onBack }) => {
             <select className="filtro-input">
               <option>División</option>
               <option>Central</option>
-              <option>San Martin</option>
+              <option>Operativa</option>
               <option>Belgrano Sur</option>
             </select>
             <select className="filtro-input">
@@ -84,9 +130,9 @@ const ReporteActivos = ({ onBack }) => {
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Área Personal</option>
-              <option>AC-APDFA Central</option>
-              <option>UF-Amba</option>
               <option>LF-La Fraternidad</option>
+              <option>UF-Amba</option>
+              <option>FC-Fuera de Convenio</option>
             </select>
             <select className="filtro-input">
               <option>Grupo Profesional</option>
@@ -100,7 +146,7 @@ const ReporteActivos = ({ onBack }) => {
             <select className="filtro-input">
               <option>Familia de puestos</option>
               <option>Presidente</option>
-              <option>VicePresidente</option>
+              <option>Vicepresidente</option>
               <option>Gerente General</option>
               <option>Gerente</option>
               <option>Subgerente</option>
@@ -109,11 +155,9 @@ const ReporteActivos = ({ onBack }) => {
           <div className="filtro-row">
             <select className="filtro-input">
               <option>Unidad Organizativa</option>
-              <option>Todos</option>
-              <option>Presidencia</option>
-              <option>Gerencia Seguridad Operacional</option>
-              <option>Jefatura de Gabinete</option>
-              <option>Secretaria General</option>
+              <option>Gerencia General</option>
+              <option>Gerencia RRHH</option>
+              <option>Gerencia Operativa</option>
             </select>
           </div>
         </div>
@@ -152,7 +196,12 @@ const ReporteActivos = ({ onBack }) => {
       {/* Tabla de resultados */}
       {mostrarTabla && (
         <div className="tabla-container">
-          <h3 className="tabla-title">Resultado de búsqueda</h3>
+          <div className="tabla-header-info">
+            <h3 className="tabla-title">Resultado de búsqueda</h3>
+            <div className="total-resultados">
+              Total de resultados: <span className="total-numero">{empleadosData.length}</span>
+            </div>
+          </div>
           <div className="tabla-wrapper">
             <table className="tabla-resultados">
               <thead>
@@ -173,63 +222,27 @@ const ReporteActivos = ({ onBack }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Operativa</td>
-                  <td>AC-APDFA Central</td>
-                  <td>12345</td>
-                  <td>Pérez Juan</td>
-                  <td>Presidente</td>
-                  <td>Profesional</td>
-                  <td>Analista</td>
-                  <td>Zona Norte</td>
-                  <td>2019-05-01</td>
-                  <td>2020-01-15</td>
-                  <td>2025-08-01</td>
-                  <td>-</td>
-                  <td>
-                    <button className="btn-lupa" title="Ver detalle">
-                      🔍
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Central</td>
-                  <td>FC-Fuera de Convenio</td>
-                  <td>12346</td>
-                  <td>González María</td>
-                  <td>Vicepresidente</td>
-                  <td>Coordinador</td>
-                  <td>Coordinador de Área</td>
-                  <td>Retiro</td>
-                  <td>2018-03-10</td>
-                  <td>2018-06-01</td>
-                  <td>2025-09-01</td>
-                  <td>-</td>
-                  <td>
-                    <button className="btn-lupa" title="Ver detalle">
-                      🔍
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Belgrano Sur</td>
-                  <td>UF-Amba</td>
-                  <td>12347</td>
-                  <td>Rodríguez Carlos</td>
-                  <td>Asesos Gerencial</td>
-                  <td>Profesional</td>
-                  <td>Técnico</td>
-                  <td>Tapiales</td>
-                  <td>2020-07-15</td>
-                  <td>2020-09-01</td>
-                  <td>2026-01-01</td>
-                  <td>-</td>
-                  <td>
-                    <button className="btn-lupa" title="Ver detalle">
-                      🔍
-                    </button>
-                  </td>
-                </tr>
+                {empleadosData.map((empleado, index) => (
+                  <tr key={index}>
+                    <td>{empleado.division}</td>
+                    <td>{empleado.areaPersonal}</td>
+                    <td>{empleado.legajo}</td>
+                    <td>{empleado.apellidoNombre}</td>
+                    <td>{empleado.familiaPuestos}</td>
+                    <td>{empleado.grupoProfesional}</td>
+                    <td>{empleado.posicion}</td>
+                    <td>{empleado.subdivision}</td>
+                    <td>{empleado.fechaAntiguedad}</td>
+                    <td>{empleado.ingreso}</td>
+                    <td>{empleado.fechaIndemnizacion}</td>
+                    <td>{empleado.egreso}</td>
+                    <td>
+                      <button className="btn-lupa" title="Ver detalle">
+                        🔍
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
